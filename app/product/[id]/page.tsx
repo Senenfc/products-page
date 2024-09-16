@@ -1,13 +1,22 @@
 import mockProducts from '@/mockData/mockProducts.json';
 
-export async function getStaticPaths() {
-  const paths = mockProducts.map((product: any) => ({
-    params: { id: product.id.toString() },
-  }));
-  return { paths, fallback: true };
+export async function generateStaticParams() {
+  const paths = mockProducts.map((product: any) => (
+    { id: product.id.toString() }
+  ));
+
+  return paths;
 }
 
 export default function ProductPage({ params }: any) {
   const { id } = params;
-  return <div>Product {id}</div>;
+  const product = mockProducts.find(product => product.id === Number(id))
+
+  if (!product) return <div>Loading...</div>
+
+  return <div>
+    <h1>Product {product.id}</h1>
+    <p>Name: {product.name}</p>
+    <p>Description: {product.description}</p>
+  </div>;
 }

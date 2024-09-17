@@ -1,5 +1,30 @@
 [
-  { "id": 1, "name": "T-shirt", "description": "Your nodejs t-shirt" },
-  { "id": 2, "name": "Pen", "description": "Your nodejs pen" },
-  { "id": 3, "name": "Cup", "description": "Your nodejs cup" }
+  {
+    "id": 1,
+    "name": "T-shirt",
+    "description": "Your nodejs t-shirt. Proin dapibus enim nec gravida lacinia. Aliquam dui nisi, rhoncus eget porta interdum, tincidunt vitae lacus. Quisque feugiat volutpat sem id accumsan. In et maximus dui, nec aliquam lorem. Curabitur at leo laoreet felis accumsan semper. Etiam gravida neque dolor, eget mollis nibh semper quis. Vivamus in scelerisque neque. Mauris consectetur volutpat ex, eget auctor quam efficitur in.",
+    "images": [
+      "/images/node-t-shirt-1.png",
+      "/images/node-t-shirt-2.png",
+      "/images/node-t-shirt-3.png"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Key Ring",
+    "description": "Your nodejs key ring. Proin dapibus enim nec gravida lacinia. Aliquam dui nisi, rhoncus eget porta interdum, tincidunt vitae lacus. Quisque feugiat volutpat sem id accumsan. In et maximus dui, nec aliquam lorem. Curabitur at leo laoreet felis accumsan semper. Etiam gravida neque dolor, eget mollis nibh semper quis. Vivamus in scelerisque neque. Mauris consectetur volutpat ex, eget auctor quam efficitur in.",
+    "images": [
+      "/images/code-key-ring-1.jpg",
+      "/images/code-key-ring-2.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Cup",
+    "description": "Your nodejs cup. Proin dapibus enim nec gravida lacinia. Aliquam dui nisi, rhoncus eget porta interdum, tincidunt vitae lacus. Quisque feugiat volutpat sem id accumsan. In et maximus dui, nec aliquam lorem. Curabitur at leo laoreet felis accumsan semper. Etiam gravida neque dolor, eget mollis nibh semper quis. Vivamus in scelerisque neque. Mauris consectetur volutpat ex, eget auctor quam efficitur in.",
+    "images": [
+      "/images/node-cup-1.jpg",
+      "/images/node-cup-2.jpg"
+    ]
+  }
 ]

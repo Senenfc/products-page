@@ -1,22 +1,30 @@
+import { getProducts } from '@/app/services/getProduct';
+import ProductDetail from '@/components/ProductDetail';
+import ProductDetailImage from '@/components/ProductDetailImage';
 import mockProducts from '@/mockData/mockProducts.json';
+import { Product } from '@/types/product.type';
 
 export async function generateStaticParams() {
-  const paths = mockProducts.map((product: any) => (
+  const products = await getProducts();
+
+  const paths = products.map((product: Product) => (
     { id: product.id.toString() }
   ));
 
   return paths;
 }
 
-export default function ProductPage({ params }: any) {
+export default async function ProductPage({ params }: any) {
   const { id } = params;
-  const product = mockProducts.find(product => product.id === Number(id))
+  const products = await getProducts();
+  const product = products.find(product => product.id === Number(id))
 
-  if (!product) return <div>Loading...</div>
+  if (!product) return <div>Product not found!</div>
 
-  return <div>
-    <h1>Product {product.id}</h1>
-    <p>Name: {product.name}</p>
-    <p>Description: {product.description}</p>
-  </div>;
+  return (
+    <article className='flex justify-center'>
+      <ProductDetailImage imageSrc={product.images[0]} alt={product.name} />
+      <ProductDetail product={product} />
+    </article>
+  )
 }

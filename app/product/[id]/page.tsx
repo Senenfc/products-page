@@ -17,13 +17,13 @@ export async function generateStaticParams() {
 export default async function ProductPage({ params }: any) {
   const { id } = params;
   const products = await getProducts();
-  const product = products.find(product => product.id === Number(id))
+  const product = products.find(product => product.id === Number(id));
 
-  if (!product) return <div>Product not found!</div>
+  if (!product) return <div>Product not found!</div>;
 
   return (
     <article className='flex justify-center'>
-      <ProductDetailImage imageSrc={product.images[0]} alt={product.name} />
+      <ProductDetailImage product={product} />
       <ProductDetail product={product} />
     </article>
   )
